@@ -40,24 +40,40 @@ For example, above you have
 
 integer_conversion = '5'.to_i + '6'.to_i
 
-this converts a pair of strings to integers. instead try this:
+this converts 5 and 6 to integers and then adds them. instead try this:
 """
 
 def sum_strings_together(first_string, second_string)
   first_string = first_string.to_i
   second_string = second_string.to_i
-  sum = first_string.to_i + second_string.to_i
+  sum = first_string + second_string
 
   return sum
 end
 
 puts(sum_strings_together("5", "14"))
+puts(sum_strings_together("4", "11"))
+puts(sum_strings_together("1", "10000000"))
+
+"""
+what does this code do? it defines a function (with 'def') called sum_strings_together that takes a pair
+of strings as 'arguments' (first_string and second_string), converts them to integers,
+adds them, and then returns that variable. Any two string integers can be passed in as arguments!
+
+Lines 54-56 are function 'calls' that actually put the function into action
+
+Since the variable you defined in line 13 called 'integer_conversion' is global, it can be used
+anywhere in the program, like this:
+
+"""
+puts(sum_strings_together(integer_conversion.to_s, "4"))
 puts(sum)
 
 """
-what does this code do? it defines a function (with 'def') that takes a pair
-of strings as 'arguments' (first_string and second_string), coverts them to integers
-and then returns that variable.
+why does puts(sum) fail? look at the traceback! it is because sum (defined in line 49) is
+a variable ONLY defined inside the function (it is not global)
+and the puts function doesn't know about it since it only exists inside the function. this idea
+that some variables defined locally within functions don't exist as far as the rest of the program
+is concerned is called 'variable scope'.
 
-why does puts(sum) fail? because sum is a variable ONLY defined inside the function (it is not global)
 """
