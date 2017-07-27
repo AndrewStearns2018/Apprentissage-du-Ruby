@@ -31,5 +31,6 @@ while new_king != "sargon" || new_king != "Sargon"
 
   if new_king == "sargon" || new_king == "Sargon"
     puts "you are smart"
+    break
   end
 end
