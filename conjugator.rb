@@ -4,52 +4,57 @@ def verb_type(infinitive)
 end
 
 def conjugate(infinitive, person, number)
-  if verb_type(infinitive) == 'ir'
+  new_verb_type = verb_type(infinitive)
+  if new_verb_type == 'ir'
     stem = infinitive[0..(infinitive.length - 2)]
     if person == 1
       if number == 1
-        return stem + 's'
+        stem += 's'
       else
         return stem + 'ssons'
       end
+
     elsif person == 2
       if number == 1
-        return stem + 's'
+        stem += 's'
       else
-        return stem + 'ssez'
+        stem += 'ssez'
       end
+
     elsif person == 3
       if number == 1
-        return stem + 't'
+        stem += 't'
       else
-        return stem + 'ssent'
+        stem += 'ssent'
       end
     end
 
-  elsif verb_type(infinitive) == 'er'
+  elsif new_verb_type == 'er'
     stem = infinitive[0..(infinitive.length - 3)]
     if person == 1
       if number == 1
-        return stem + 'e'
+        stem += 'e'
       else
-        return stem + 'ons'
+        stem += 'ons'
       end
 
     elsif person == 2
       if number == 1
-        return stem + 'es'
+        stem += 'es'
       else
-        return stem + 'ez'
+        stem += 'ez'
       end
 
     elsif person == 3
       if number == 1
-        return stem + 'e'
+        stem += 'e'
       else
-        return stem + 'ent'
+        stem += 'ent'
       end
     end
   end
+
+  return stem
 end
 
-puts conjugate('desirer', 3, 2)
+puts conjugate('desirer', 1, 2)
