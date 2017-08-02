@@ -1,11 +1,6 @@
 
 def verb_type(infinitive)
-  ending = infinitive[(infinitive.length - 2)..infinitive.length]
-  if ending == 'ir'
-    return 'ir'
-  elsif ending == 'er'
-    return 'er'
-  end
+  return infinitive[(infinitive.length - 2)..infinitive.length]
 end
 
 def conjugate(infinitive, person, number)
@@ -51,10 +46,10 @@ def conjugate(infinitive, person, number)
       if number == 1
         return stem + 'e'
       else
-        return stem 'ent'
+        return stem + 'ent'
       end
     end
   end
 end
 
-puts conjugate('finir', 2, 1)
+puts conjugate('desirer', 3, 2)
