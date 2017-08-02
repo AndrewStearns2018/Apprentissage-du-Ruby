@@ -20,17 +20,19 @@
 #end
 
 
-puts "who was the first Akkadian king?"
-
-new_king = gets.chomp
-
-while new_king != "sargon" || new_king != "Sargon"
-  puts  "try again"
-  new_king = gets.chomp
-
-
-  if new_king == "sargon" || new_king == "Sargon"
-    puts "you are smart"
-    break
+def history_quiz(question, answer)
+  puts question
+  how_dumb = "really "
+  new_answer = gets.chomp.downcase()
+  while new_answer != answer.downcase()
+    puts "you are " + how_dumb + "dumb"
+    how_dumb  = how_dumb + "really "
+    new_answer = gets.chomp
+    if new_answer == answer.downcase()
+      break
+    end
   end
+  return "you are smart"
 end
+
+puts history_quiz("who was the first Akkadian king?", "Sargon")
