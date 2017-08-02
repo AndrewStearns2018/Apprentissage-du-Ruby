@@ -11,7 +11,7 @@ def conjugate(infinitive, person, number)
       if number == 1
         stem += 's'
       else
-        return stem + 'ssons'
+        return stem += 'ssons'
       end
 
     elsif person == 2
@@ -57,4 +57,4 @@ def conjugate(infinitive, person, number)
   return stem
 end
 
-puts conjugate('desirer', 1, 2)
+puts conjugate('choisir', 1, 2)
